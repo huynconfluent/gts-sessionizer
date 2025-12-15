@@ -73,7 +73,7 @@ function menu () {
 
     # display ordering of most frequent ticket workspace to least
     array_one=("$CREATE_TICKET" $(zoxide query $TICKET_DIRECTORY/ -l | head -n$QUERY_LIMIT | xargs -I {} basename {} | grep "$TICKET_PREFIX\|$US_ONLY_PREFIX"))
-    array_two=($(find $TICKET_DIRECTORY -type d -name '$US_ONLY_PREFIX*' -print0 | xargs -0 -I {} basename {} | sort -r) $(find $TICKET_DIRECTORY -type d -name '$TICKET_PREFIX*' -print0 | xargs -0 -I {} basename {} | sort -r))
+    array_two=($(find $TICKET_DIRECTORY -type d -name "$US_ONLY_PREFIX*" -print0 | xargs -0 -I {} basename {} | sort -r) $(find $TICKET_DIRECTORY -type d -name "$TICKET_PREFIX*" -print0 | xargs -0 -I {} basename {} | sort -r))
     declare -a array_menu
     declare -A seen_elements
 
