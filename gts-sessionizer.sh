@@ -91,7 +91,7 @@ function menu () {
 
     choice=$(gum choose "${array_menu[@]}")
 
-    if [ "$choice" == "$CREATE_TICKET" ]; then
+    if [[ "$choice" == "$CREATE_TICKET" ]]; then
         # create new ticket
         newTicket
     else
